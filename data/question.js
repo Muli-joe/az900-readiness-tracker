@@ -1,0 +1,22 @@
+// Original AZ-900 practice questions (unofficial), based on the public skills outline.
+// Question format: [topic, question, correct, wrong1, wrong2, wrong3, explanation]
+// Topics: C = Cloud concepts, A = Architecture & services, G = Management & governance
+const TOP = { C: { n: "Cloud concepts", w: .275 }, A: { n: "Architecture & services", w: .375 }, G: { n: "Management & governance", w: .325 } };
+// [topic, question, correct answer, wrong1, wrong2, wrong3, explanation]
+const Q = [
+    ["C", "A business stops buying servers and pays monthly for cloud services instead. Spending shifts from…", "Capital expenditure to operational expenditure", "Operational expenditure to capital expenditure", "Variable costs to fixed costs", "Taxes to licence fees", "Buying hardware upfront is CapEx. Pay-as-you-go cloud is OpEx."],
+    ["C", "Which service model leaves the customer managing only their applications and data?", "Platform as a Service (PaaS)", "Infrastructure as a Service (IaaS)", "Software as a Service (SaaS)", "On-premises hosting", "In PaaS the provider manages OS and infrastructure. In IaaS you also manage the OS; in SaaS you only use the software."],
+    ["C", "A shop’s website gets huge traffic at festive season, then drops. Which benefit lets resources grow and shrink automatically?", "Elasticity", "Fault tolerance", "Governance", "Predictability", "Elasticity matches capacity to demand in both directions, so you pay only for what you use."],
+    ["C", "Under the shared responsibility model, who is always responsible for a customer’s data?", "The customer", "The cloud provider", "The internet provider", "Responsibility is split equally", "Whatever the service model, the customer always owns protecting their data and access."],
+    ["C", "A company keeps some apps on its own servers and connects them to Azure for backup. This is…", "A hybrid cloud", "A public cloud only", "A private cloud only", "A community cloud", "Hybrid combines on-premises or private resources with public cloud."],
+    ["A", "Which is a separate datacenter inside an Azure region, with its own power, cooling and networking?", "Availability zone", "Resource group", "Subscription", "Management group", "Availability zones protect against datacenter-level failures within a region."],
+    ["A", "Which Azure service runs small pieces of code only when triggered, billed per execution?", "Azure Functions", "Azure Virtual Machines", "Azure Blob Storage", "Azure Virtual Network", "Functions is serverless: no server management and you pay when code runs."],
+    ["A", "A site needs to store millions of customer photos cheaply. Which service fits best?", "Azure Blob Storage", "Azure Functions", "Microsoft Entra ID", "Azure Policy", "Blob storage is object storage for unstructured data like images, video and backups."],
+    ["A", "Which service handles cloud identity and sign-in for users?", "Microsoft Entra ID", "Azure Advisor", "Azure Monitor", "Azure Blob Storage", "Entra ID (formerly Azure Active Directory) is Microsoft’s identity and access management service."],
+    ["A", "Which logical container groups related Azure resources that share a lifecycle?", "Resource group", "Availability zone", "Virtual network", "Region", "Delete a resource group and everything inside it is deleted."],
+    ["G", "You want resources to be created only in approved regions. Which service enforces this?", "Azure Policy", "Azure Advisor", "Pricing calculator", "Azure Monitor", "Azure Policy creates and enforces rules and reports compliance."],
+    ["G", "Which feature stops anyone accidentally deleting a production database?", "A resource lock", "A tag", "Azure Advisor", "A region pair", "CanNotDelete and ReadOnly locks protect resources even from users with permissions."],
+    ["G", "Which tool estimates the monthly cost of Azure services you plan to use?", "Pricing calculator", "Azure Policy", "Entra ID", "Resource lock", "The pricing calculator estimates new workloads. The TCO calculator compares on-premises with Azure."],
+    ["G", "A teammate must restart VMs but do nothing else. What should you use?", "Azure RBAC with a suitable role", "A resource lock", "Azure Advisor", "A tag", "RBAC grants only the permissions a role needs, at the right scope (least privilege)."],
+    ["G", "Which service gives personalised recommendations on cost, security, reliability and performance?", "Azure Advisor", "Azure Policy", "Azure Blob Storage", "Azure Functions", "Advisor analyses your resources and recommends improvements."]
+];

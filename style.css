@@ -1,0 +1,259 @@
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f6f4ee;
+  --card: #fff;
+  --ink: #1c2826;
+  --mut: #66726e;
+  --line: #dcd8cb;
+  --acc: #0b7a5a;
+  --accb: #d8f0e6;
+  --warn: #b7791f;
+  --warnb: #fbefd2;
+  --bad: #c2410c;
+  --badb: #fde6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #13191a;
+    --card: #1c2527;
+    --ink: #eef2ef;
+    --mut: #9aa8a3;
+    --line: #33403d;
+    --acc: #4fd1a1;
+    --accb: #1c3a30;
+    --warn: #f0b34a;
+    --warnb: #3a2f14;
+    --bad: #fb923c;
+    --badb: #3b2616;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #13191a;
+  --card: #1c2527;
+  --ink: #eef2ef;
+  --mut: #9aa8a3;
+  --line: #33403d;
+  --acc: #4fd1a1;
+  --accb: #1c3a30;
+  --warn: #f0b34a;
+  --warnb: #3a2f14;
+  --bad: #fb923c;
+  --badb: #3b2616;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.5 Georgia,
+    "Times New Roman",
+    serif;
+}
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+h1 {
+  font-size: 1.45rem;
+  margin: 0;
+}
+h2 {
+  font-size: 1.05rem;
+  margin: 24px 0 8px;
+}
+.sub,
+.sm {
+  color: var(--mut);
+  font:
+    0.85rem system-ui,
+    sans-serif;
+}
+.sub {
+  margin: 4px 0 14px;
+}
+.badge {
+  display: inline-block;
+  font:
+    600 0.7rem system-ui,
+    sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--badb);
+  color: var(--bad);
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+button,
+select,
+input {
+  font:
+    600 0.88rem system-ui,
+    sans-serif;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.tabs button {
+  border-radius: 99px;
+}
+.tabs .on,
+.pri {
+  background: var(--acc);
+  color: var(--bg);
+  border-color: var(--acc);
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+}
+.hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ring {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  flex: none;
+}
+.ring svg {
+  transform: rotate(-90deg);
+}
+.ring b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font:
+    700 1.9rem system-ui,
+    sans-serif;
+}
+.pill {
+  display: inline-block;
+  font:
+    700 0.75rem system-ui,
+    sans-serif;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.ready {
+  background: var(--accb);
+  color: var(--acc);
+}
+.almost {
+  background: var(--warnb);
+  color: var(--warn);
+}
+.need {
+  background: var(--badb);
+  color: var(--bad);
+}
+.none {
+  background: var(--line);
+  color: var(--mut);
+}
+.dom {
+  margin-top: 12px;
+}
+.dom .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.track {
+  position: relative;
+  height: 12px;
+  background: var(--line);
+  border-radius: 7px;
+  margin: 8px 0 4px;
+}
+.track i {
+  display: block;
+  height: 100%;
+  border-radius: 7px;
+}
+.track u {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--ink);
+  opacity: 0.5;
+  left: 80%;
+}
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 90px;
+  margin-top: 8px;
+}
+.chart div {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  min-height: 3px;
+}
+.opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-top: 8px;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.opt.right {
+  background: var(--accb);
+  border-color: var(--acc);
+}
+.opt.wrong {
+  background: var(--badb);
+  border-color: var(--bad);
+}
+.fb {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--accb);
+  font-size: 0.95rem;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.foot {
+  margin-top: 28px;
+  font:
+    0.75rem system-ui,
+    sans-serif;
+  color: var(--mut);
+}
